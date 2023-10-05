@@ -2,24 +2,59 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
+       System.out.println("shits working");
+       IProducto[] productos = new Producto[6];
 
-        Libro libro = new Libro(3,null,"Patrocolo","MarcoPolo,",
-                "stars");
+       productos[0] = new Iphone(29, "Apple", "3G", "Negro");
+       productos[1] = new Iphone(39, "Apple", "4G", "Blanco");
+       productos[2] = new TvLcd(34, "Sony", 40);
+       productos[3] = new Libro(18, null, "Eric Gamma", "Elementos reusables POO", "Alguna...");
+       productos[4] = new Libro(14, null, "Martin Fowler", "UML Gota a Gota", "Alguna...");
+       productos[5] = new Comic(5, null, "Pepo", "Condorito", "Alguna...", "Condorito");
+        for (IProducto producto : productos) {
 
-        System.out.println("precio: " + libro.getPrecio() + "\n" +
-                "fecha de pub: " + libro.getFechaDePublicacion() +
-                "Autor: " + libro.getAutor() +"\n" + "Titulo: " +libro.getTitulo() +
-                "\n" + "Editorial: " + libro.getEditorial());
-        System.out.printf("Hello and welcome!");
+            System.out.print("Tipo de: " + producto.getClass().getName());
+            System.out.print(" - ");
+            System.out.print("Precio: " + producto.getPrecio());
+            System.out.print(" - ");
+            System.out.print("Precio final: " + producto.getPrecioVenta());
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+            // Para los Electronicos  ============
+            if (producto instanceof IElectronico) {
+                System.out.print(" - ");
+                System.out.print("Fabricante: " + ((IElectronico) producto).getFabricante());
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+                // Para los IPhone ============
+                if (producto instanceof Iphone) {
+                    System.out.print(" - ");
+                    System.out.print("Modelo: " + ((Iphone) producto).getModelo());
+                    System.out.print(" - ");
+                    System.out.print("Color: " + ((Iphone) producto).getColor());
+                }
+
+                // Para los LCD  ============
+                if (producto instanceof TvLcd) {
+                    System.out.print(" - ");
+                    System.out.print("Pulgadas: " + ((TvLcd) producto).getPulgada());
+                }
+            }
+
+            // Para los Libros  ============
+            if (producto instanceof ILibro) {
+                System.out.print(" - ");
+                System.out.print("Titulo: " + ((ILibro) producto).getTitulo());
+                System.out.print(" - ");
+                System.out.print("Autor: " + ((ILibro) producto).getAutor());
+
+                // Para los Comics  ============
+                if (producto instanceof Comic) {
+                    System.out.print(" - ");
+                    System.out.print("Personaje: " + ((Comic) producto).getPersonaje());
+                }
+
+            }
+
+            System.out.println();
         }
     }
 }

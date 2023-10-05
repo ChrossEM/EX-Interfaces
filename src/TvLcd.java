@@ -3,21 +3,18 @@ public class TvLcd extends Electronico {
 
     public TvLcd(int precio, String fabricante, int pulgada) {
         super(precio, fabricante);
-        Pulgada = pulgada;
+        this.Pulgada = pulgada;
     }
 
     @Override
-    public String getFabricante(String fabricante) {
-        return super.getFabricante(fabricante);
+    public double getPrecioVenta() {
+        // TODO Auto-generated method stub
+        return getPrecio()*0.8;
     }
 
-    @Override
-    public double getPrecioVenta(double precioVenta) {
-        return super.getPrecioVenta(precioVenta);
+    public int getPulgada() {
+        return Pulgada;
     }
-
-    @Override
-    public int getPrecio(int precioVenta) {
-        return super.getPrecio(precioVenta);
-    }
+    
+    
 }
