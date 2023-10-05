@@ -17,7 +17,7 @@ public class Main {
             System.out.print(" - ");
             System.out.print("Precio: " + producto.getPrecio());
             System.out.print(" - ");
-            System.out.print("Precio final: " + producto.getPrecioVenta());
+            System.out.printf("Precio final: %.2f",producto.getPrecioVenta());
 
             // Para los Electronicos  ============
             if (producto instanceof IElectronico) {

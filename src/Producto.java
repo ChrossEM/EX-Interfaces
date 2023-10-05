@@ -7,7 +7,6 @@ abstract public class Producto implements IProducto{
 
     @Override
     public int getPrecio() {
-        // TODO Auto-generated method stub
         return precio;
     }
     

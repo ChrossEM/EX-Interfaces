@@ -8,7 +8,6 @@ abstract public class Electronico extends Producto implements IElectronico{
 
     @Override
     public String getFabricante() {
-        // TODO Auto-generated method stub
         return fabricante;
     }
 

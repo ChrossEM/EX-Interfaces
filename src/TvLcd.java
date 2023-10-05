@@ -8,7 +8,6 @@ public class TvLcd extends Electronico {
 
     @Override
     public double getPrecioVenta() {
-        // TODO Auto-generated method stub
         return getPrecio()*0.8;
     }
 
